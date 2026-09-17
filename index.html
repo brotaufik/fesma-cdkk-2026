@@ -198,6 +198,28 @@
   .topbar-spacer { flex: 1; }
 
   /* Theme switch (in topbar) */
+  .deck-link {
+    display: flex; align-items: center; gap: 9px; flex-shrink: 0;
+    text-decoration: none; margin-left: 8px;
+    padding: 5px 12px 5px 6px;
+    background: var(--glass-soft); border: 1px solid var(--glass-edge);
+    border-radius: 22px;
+    box-shadow: var(--inset-hi);
+    transition: all 0.2s;
+  }
+  .deck-link:hover { background: var(--glass-strong); transform: translateY(-1px); }
+  .deck-link:active { transform: translateY(0); }
+  .deck-link-ic {
+    display: flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%; font-size: 13px;
+    background: linear-gradient(180deg, #C9870E, #8A5A08);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 6px rgba(138,90,8,0.35);
+  }
+  .deck-link-text { display: flex; flex-direction: column; line-height: 1.18; }
+  .deck-link-lbl { font-size: 12px; font-weight: 700; color: var(--text); white-space: nowrap; }
+  .deck-link-sub { font-size: 9.5px; font-weight: 600; color: var(--text3); letter-spacing: 0.3px; white-space: nowrap; }
+  .deck-link-arrow { font-size: 11px; font-weight: 700; color: var(--text3); margin-left: 1px; }
+
   .theme-switch {
     display: flex; align-items: center; gap: 9px; flex-shrink: 0;
     cursor: pointer; padding: 6px 13px 6px 7px;
@@ -893,6 +915,7 @@
   @media (max-width: 480px) {
     .brand-text { display: none; }
     .theme-switch-label { display: none; }
+    .deck-link-sub { display: none; }
   }
 
   /* ===== AURORA SOUL PACK MODAL ===== */
@@ -992,6 +1015,16 @@
           <span>📁</span> Repositori
         </button>
       </div>
+      <a class="deck-link" href="deck.html" target="_blank" rel="noopener"
+         title="Buka Deck Nota Kursus dalam tab baharu"
+         aria-label="Buka Deck Nota Kursus, 120 slaid, dalam tab baharu">
+        <span class="deck-link-ic" aria-hidden="true">📊</span>
+        <span class="deck-link-text">
+          <span class="deck-link-lbl">Deck Nota Kursus</span>
+          <span class="deck-link-sub">120 SLAID · 12 MODUL</span>
+        </span>
+        <span class="deck-link-arrow" aria-hidden="true">↗</span>
+      </a>
       <div class="topbar-spacer"></div>
       <div class="sys-clock" aria-hidden="true">
         <div class="clock-time" id="clockTime">--:--:--</div>
@@ -1537,7 +1570,7 @@
             <tr><td>Layak Serta</td><td>Pemenang pertandingan peringkat negeri sahaja</td></tr>
             <tr><td>Produk Akhir</td><td>Video infografik digital MP4 (dibuat pada hari pertandingan)</td></tr>
             <tr><td>Durasi Video</td><td>Maksimum 5 minit</td></tr>
-            <tr><td>Tempoh Penghasilan</td><td><strong>5 jam (300 minit)</strong> secara langsung pada hari pertandingan</td></tr>
+            <tr><td>Tempoh Penghasilan</td><td><strong>8 jam (480 minit)</strong> secara langsung pada hari pertandingan</td></tr>
             <tr><td>Tajuk Pertandingan</td><td>Dicabut daripada 'blackbox' pada hari pertandingan</td></tr>
             <tr><td>Sesi Persembahan</td><td>Maksimum <strong>20 minit</strong> setiap kumpulan (termasuk soal jawab)</td></tr>
             <tr><td>Canva</td><td>Infografik, diagram, carta, teks dan bahan visual utama</td></tr>
@@ -1647,7 +1680,7 @@
       </div>
       <div class="callout warn">
         <span class="callout-icon">⏱️</span>
-        <div class="callout-body"><strong>Peringatan Masa</strong>Tempoh penghasilan 300 minit termasuk masa render dan export. Peserta dinasihatkan mula export sekurang-kurangnya 30 minit sebelum tamat masa.</div>
+        <div class="callout-body"><strong>Peringatan Masa</strong>Tempoh penghasilan 480 minit termasuk masa render dan export. Peserta dinasihatkan mula export sekurang-kurangnya 48 minit sebelum tamat masa.</div>
       </div>
       <div class="flow" style="gap:6px;margin-bottom:20px">
         <div class="flow-step">
@@ -1662,7 +1695,7 @@
           <div class="flow-box" style="background:var(--card-c3);border-color:var(--border-c3)">
             <div class="flow-box-num">2</div>
             <div class="flow-box-title">Penghasilan</div>
-            <div class="flow-box-sub">5 jam (300 min)</div>
+            <div class="flow-box-sub">8 jam (480 min)</div>
           </div>
         </div>
         <div class="flow-arrow">→</div>
@@ -1944,7 +1977,7 @@
             <tr><td>Kelayakan</td><td>Peserta Kelas Kemahiran KEMAS (6 bulan min)</td><td>Pemenang dari peringkat negeri sahaja</td></tr>
             <tr><td>Saiz Kumpulan</td><td>2 peserta</td><td>2 peserta + 1 pengurus <span class="diff-tag" style="background:var(--badge-kebangsaan-bg);color:var(--badge-kebangsaan)">+pengurus</span></td></tr>
             <tr><td>Mod Penghasilan</td><td>Di luar tapak (awal), hantar melalui Google Drive</td><td>Secara langsung pada hari pertandingan <span class="diff-tag" style="background:var(--danger-bg);color:var(--danger-text)">langsung</span></td></tr>
-            <tr><td>Tempoh Penghasilan</td><td>Diuruskan sendiri (tiada tempoh tetap hari-H)</td><td><strong>5 jam (300 minit)</strong> pada hari pertandingan</td></tr>
+            <tr><td>Tempoh Penghasilan</td><td>Diuruskan sendiri (tiada tempoh tetap hari-H)</td><td><strong>8 jam (480 minit)</strong> pada hari pertandingan</td></tr>
             <tr><td>Tajuk Pertandingan</td><td>Dimaklumkan lebih awal melalui surat rasmi dan microsite</td><td>Dicabut dari 'blackbox' pada hari pertandingan <span class="diff-tag" style="background:var(--danger-bg);color:var(--danger-text)">sulit</span></td></tr>
             <tr><td>Sesi Persembahan</td><td>TIADA — penilaian berdasarkan video sahaja</td><td>Maks. 20 minit (tayangan + soal jawab) <span class="diff-tag" style="background:var(--badge-kebangsaan-bg);color:var(--badge-kebangsaan)">wajib</span></td></tr>
             <tr><td>Rakaman Footage</td><td>Aktiviti kemahiran di daerah/bahagian/negeri (wajib)</td><td>Aktiviti dalam dewan acara FESMA (wajib)</td></tr>
@@ -2029,7 +2062,7 @@
         <div class="card" style="border-left:4px solid var(--info-border);background:var(--info-bg)">
           <div class="card-title" style="color:var(--info-text)">🇲🇾 Kebangsaan — Fokus Utama</div>
           <div class="card-body">
-            <div style="margin-bottom:6px">Tekanan masa: 5 jam (300 min) — perlu manage masa export (30 min awal)</div>
+            <div style="margin-bottom:6px">Tekanan masa: 8 jam (480 min) — perlu manage masa export (48 min awal)</div>
             <div style="margin-bottom:6px">Tajuk RAHSIA — dicabut dari blackbox hari-H; latihan improvisasi penting</div>
             <div style="margin-bottom:6px"><strong>Persembahan 20 minit wajib</strong> — keyakinan berkomunikasi dinilai (10M)</div>
             <div style="margin-bottom:6px">Wajib rakam aktiviti dalam dewan FESMA hari pertandingan</div>
