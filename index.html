@@ -133,6 +133,10 @@
     .deck-link-sub, .theme-switch-label { display: none; }
     .btns { grid-template-columns: 1fr; }
   }
+  /* butang kad disusun satu lajur bila dua lajur terlalu sempit (elak label berbalut) */
+  @media (min-width: 761px) and (max-width: 859px), (min-width: 421px) and (max-width: 459px) {
+    .grid .btns { grid-template-columns: 1fr; }
+  }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
@@ -174,15 +178,15 @@
         </div>
       </div>
 
-      <section class="card portal" aria-label="Portal CDKK 2026">
+      <section class="card portal" aria-label="Portal Dokumen CDKK 2026">
         <div>
           <div class="card-head">
             <div class="card-ic gold" aria-hidden="true">🏛️</div>
-            <div><div class="card-tag">Pusat rujukan rasmi</div><div class="card-title">Portal CDKK 2026</div></div>
+            <div><div class="card-tag">Pusat rujukan rasmi</div><div class="card-title">Portal Dokumen CDKK 2026</div></div>
           </div>
           <p class="card-desc" style="margin-top:10px">Semua dokumen program terkini dalam satu pautan: Garis Panduan, Nota Kursus, Borang Pertandingan, Deck Interaktif, Peta Aset ke Folder dan AURORA Soul Pack.</p>
         </div>
-        <div class="btns"><a class="btn pri" href="https://brotaufik.github.io/cdkk-portal-2026/">Buka Portal CDKK 2026 ↗</a></div>
+        <div class="btns"><a class="btn pri" href="https://brotaufik.github.io/cdkk-portal-2026/">Buka Portal Dokumen ↗</a></div>
       </section>
 
       <div class="grid">
